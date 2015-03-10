@@ -24,6 +24,7 @@ public class RestaurantController {
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     @ResponseBody
     public List<Restaurant> restaurants(@RequestParam("id") List<Long> ids) {
+    	System.out.println("git test");
         return restaurantService.getRestaurants(ids);
     }
     
