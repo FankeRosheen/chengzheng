@@ -44,4 +44,11 @@ public class RestaurantDao {
                         "create_time as createTime from restaurant ",
                 BeanPropertyRowMapper.newInstance(Restaurant.class));
     }
+    
+    
+	public void saveLocInfo(Long restaurantId,String location) {
+		String sql = "update restaurant set location = ? where id = ?";
+		Object[]params = new Object[]{location,restaurantId};
+		this.jdbcTemplate.update(sql,params);
+	}
 }

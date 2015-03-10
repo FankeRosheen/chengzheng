@@ -26,9 +26,20 @@ public class RestaurantController {
     public List<Restaurant> restaurants(@RequestParam("id") List<Long> ids) {
         return restaurantService.getRestaurants(ids);
     }
-
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello() {
-        return "hi";
+    
+    //返回show.jsp页面
+    @RequestMapping(value="/check",method=RequestMethod.GET)
+    public String showMap(){
+    	return "show";
     }
+	
+    //处理来自show.jsp中的ajax请求
+	@RequestMapping(value="/show",method=RequestMethod.GET)
+	@ResponseBody
+	public void showAllAtMap(){
+			restaurantService.getAllRestaurants();
+	}
+	
+    
+    
 }
