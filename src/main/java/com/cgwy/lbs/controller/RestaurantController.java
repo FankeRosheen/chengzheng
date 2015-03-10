@@ -26,4 +26,9 @@ public class RestaurantController {
     public List<Restaurant> restaurants(@RequestParam("id") List<Long> ids) {
         return restaurantService.getRestaurants(ids);
     }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello() {
+        return "hi";
+    }
 }
