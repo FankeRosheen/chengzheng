@@ -10,12 +10,12 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <!-- Connection Info -->
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="${driverClassName}"/>
 
         <property name="url"
-                  value="jdbc:mysql://cgwyread.mysql.rds.aliyuncs.com/b2b?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull"/>
-        <property name="username" value="b2b"/>
-        <property name="password" value="mirrornetworks"/>
+                  value="${databaseUrl}"/>
+        <property name="username" value="${databaseUsername}"/>
+        <property name="password" value="${databasePassword}"/>
 
 
         <!-- Connection Pooling Info -->
