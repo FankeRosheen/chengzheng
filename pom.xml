@@ -7,6 +7,7 @@
     <groupId>com.cgwy</groupId>
     <artifactId>cgwylbs</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
 
     <properties>
@@ -182,6 +183,18 @@
     </dependencies>
 
     <build>
+        <finalName>ninemiles</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <filters>
+            <filter>src/main/filters/filter-${env}.properties</filter>
+        </filters>
+
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -215,6 +228,28 @@
         </pluginManagement>
 
     </build>
+
+    <profiles>
+        <!-- 开发环境，默认激活 -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <!--默认启用的是dev环境配置 -->
+            </activation>
+        </profile>
+        <!-- 生产环境 -->
+        <profile>
+            <id>product</id>
+            <properties>
+                <env>product</env>
+            </properties>
+        </profile>
+    </profiles>
+
 
 
 </project>

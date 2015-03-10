@@ -1,16 +1,12 @@
 package com.cgwy.lbs.dao;
 
 import com.cgwy.lbs.entity.Restaurant;
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -42,8 +38,10 @@ public class RestaurantDao {
     }
 
 
-
-
-
-
+    public List<Restaurant> getAllRestaurants() {
+        return namedParameterJdbcTemplate.query("select id , user_id as userId, name, " +
+                        "region_id as regionId, address, status, " +
+                        "create_time as createTime from restaurant ",
+                BeanPropertyRowMapper.newInstance(Restaurant.class));
+    }
 }

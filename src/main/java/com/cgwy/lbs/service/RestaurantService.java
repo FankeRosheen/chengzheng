@@ -26,6 +26,11 @@ public class RestaurantService {
         return restaurantDao.getRestaurants(ids);
     }
 
+    public List<Restaurant> getAllRestaurants(){
+        return restaurantDao.getAllRestaurants();
+    }
+
+
     public List<Restaurant> getRestaurantsHavingOrders(Date start, Date end) {
         final List<Order> orders = orderDao.getUncanceledOrderCreateTimeBetween(start, end);
 
