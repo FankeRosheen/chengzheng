@@ -14,7 +14,6 @@ body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-fami
 </body>
 </html>
 <script type="text/javascript">
-	
 
 //发送ajax请求、返回所有的位置以及地理坐标
 

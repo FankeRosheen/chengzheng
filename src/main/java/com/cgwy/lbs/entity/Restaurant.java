@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class Restaurant {
     private Long id;
-
+    
     private Long userId;
 
     private String name;

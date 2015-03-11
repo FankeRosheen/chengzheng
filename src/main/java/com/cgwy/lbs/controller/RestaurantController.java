@@ -24,7 +24,6 @@ public class RestaurantController {
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     @ResponseBody
     public List<Restaurant> restaurants(@RequestParam("id") List<Long> ids) {
-    	System.out.println("gt test");
         return restaurantService.getRestaurants(ids);
     }
     
@@ -37,8 +36,8 @@ public class RestaurantController {
     //处理来自show.jsp中的ajax请求
 	@RequestMapping(value="/show",method=RequestMethod.GET)
 	@ResponseBody
-	public void showAllAtMap(){
-			restaurantService.getAllRestaurants();
+	public List<Restaurant> showAllAtMap(){
+			return restaurantService.getAllRestaurants();
 	}
 	
     
