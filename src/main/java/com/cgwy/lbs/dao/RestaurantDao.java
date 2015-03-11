@@ -1,13 +1,18 @@
 package com.cgwy.lbs.dao;
 
-import com.cgwy.lbs.entity.Restaurant;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import com.cgwy.lbs.entity.Restaurant;
 
 /**
  * User: xudong
@@ -51,4 +56,6 @@ public class RestaurantDao {
 		Object[]params = new Object[]{location,restaurantId};
 		this.jdbcTemplate.update(sql,params);
 	}
+	
+	
 }

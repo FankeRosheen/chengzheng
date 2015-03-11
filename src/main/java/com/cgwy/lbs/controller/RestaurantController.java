@@ -37,10 +37,23 @@ public class RestaurantController {
 	@RequestMapping(value="/show",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Restaurant> showAllAtMap(){
-			System.out.println("AJAX");
 			return restaurantService.getAllRestaurants();
 	}
 	
+	
+	@RequestMapping(value ="/commit",method=RequestMethod.GET)
+	public String commit(@RequestParam("restaurantId") Long restaurantId){
+		return "commit";
+	}
+	
+	
+	@RequestMapping(value="/saveRestLoc",method=RequestMethod.GET)
+	public String saveRestLoc(@RequestParam("restaurantId")  Long restaurantId,
+			@RequestParam("location") String location){
+		restaurantService.saveLocInfo(restaurantId, location);
+		return "show";
+	}
+
     
     
 }

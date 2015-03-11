@@ -6,6 +6,7 @@ import com.cgwy.lbs.entity.Order;
 import com.cgwy.lbs.entity.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -41,4 +42,11 @@ public class RestaurantService {
 
         return getRestaurants(restaurantIds);
     }
+    
+    
+	@Transactional
+	public void saveLocInfo(Long restaurantId, String location) {
+		restaurantDao.saveLocInfo(restaurantId,location);
+	}
+
 }
