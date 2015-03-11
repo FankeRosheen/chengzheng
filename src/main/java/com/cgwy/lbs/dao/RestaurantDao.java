@@ -41,7 +41,7 @@ public class RestaurantDao {
     public List<Restaurant> getAllRestaurants() {
         return namedParameterJdbcTemplate.query("select id , user_id as userId, name, " +
                         "region_id as regionId, address, status, " +
-                        "create_time as createTime from restaurant ",
+                        "create_time as createTime,location as location from restaurant where location is not null ",
                 BeanPropertyRowMapper.newInstance(Restaurant.class));
     }
     

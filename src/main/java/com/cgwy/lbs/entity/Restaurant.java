@@ -78,4 +78,12 @@ public class Restaurant {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+    
+    private String location;
+    public void setLocation(String location) {
+		this.location = location;
+	}
+    public String getLocation() {
+		return location;
+	}
 }

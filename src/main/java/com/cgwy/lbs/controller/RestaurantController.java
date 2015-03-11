@@ -37,6 +37,7 @@ public class RestaurantController {
 	@RequestMapping(value="/show",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Restaurant> showAllAtMap(){
+			System.out.println("AJAX");
 			return restaurantService.getAllRestaurants();
 	}
 	

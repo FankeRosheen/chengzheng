@@ -18,7 +18,7 @@ public class RestLocController{
 	}
 	
 	
-	@RequestMapping(value="/show",method=RequestMethod.GET)
+	@RequestMapping(value="/saveRestLoc",method=RequestMethod.GET)
 	public void saveRestLoc(@RequestParam("id")  Long restaurantId,
 			@RequestParam("location") String location){
 		restLocService.saveLocInfo(restaurantId, location);
